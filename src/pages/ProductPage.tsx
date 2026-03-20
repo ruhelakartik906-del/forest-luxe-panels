@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-import { ArrowRight, Droplets, Layers, Bug, Leaf, Maximize, Paintbrush, Download } from "lucide-react";
+import { ArrowRight, Droplets, Layers, Bug, Leaf, Maximize, Paintbrush, Download, CheckCircle, Wrench, ClipboardList } from "lucide-react";
 import Layout from "@/components/Layout";
 import mdfBoard from "@/assets/mdf-board.jpg";
 import hdhmrBoard from "@/assets/hdhmr-board.jpg";
@@ -14,6 +14,8 @@ const productData: Record<string, {
   name: string; image: string; tagline: string; intro: string;
   features: { icon: any; title: string }[];
   specs: { property: string; unit: string; value: string }[];
+  maintenance: string[];
+  installation: { step: string; desc: string }[];
 }> = {
   "mdf-board": {
     name: "MDF Board", image: mdfBoard, tagline: "Engineered for Smooth Perfection",
@@ -28,6 +30,18 @@ const productData: Record<string, {
       { property: "Thickness Availability", unit: "mm", value: "2.5 - 35" },
       { property: "Moisture Content", unit: "%", value: "5 - 8" },
       { property: "Modulus of Elasticity", unit: "N/mm²", value: "≥ 2500" },
+    ],
+    maintenance: [
+      "Wipe with a soft, dry or slightly damp cloth regularly",
+      "Avoid prolonged exposure to water or high humidity",
+      "Use coasters or mats under hot objects to prevent surface damage",
+      "Clean spills immediately to avoid swelling",
+      "Apply edge banding on exposed edges for extra protection",
+    ],
+    installation: [
+      { step: "Acclimatize", desc: "Store boards in the room for 48 hours before installation to adjust to ambient conditions." },
+      { step: "Measure & Cut", desc: "Use a fine-toothed saw or CNC machine. Support the board fully to avoid chipping." },
+      { step: "Fix & Finish", desc: "Pre-drill screw holes. Use wood adhesive along with screws for strong joints. Sand edges before finishing." },
     ],
   },
   "hdhmr-board": {
@@ -44,6 +58,18 @@ const productData: Record<string, {
       { property: "Moisture Content", unit: "%", value: "4 - 7" },
       { property: "Modulus of Elasticity", unit: "N/mm²", value: "≥ 3200" },
     ],
+    maintenance: [
+      "Ideal for wet areas but avoid submerging in standing water",
+      "Clean with a mild detergent and soft cloth",
+      "Ensure proper ventilation in enclosed cabinets to reduce humidity buildup",
+      "Periodically check edge seals and re-apply if worn",
+      "Use quality hinges to avoid stress on screw joints",
+    ],
+    installation: [
+      { step: "Acclimatize", desc: "Allow boards to adjust to room temperature for 24-48 hours before use." },
+      { step: "Precision Cutting", desc: "Use carbide-tipped blades for clean cuts. HDHMR's density requires sharp tools." },
+      { step: "Assembly", desc: "Pre-drill all holes. Use high-quality wood screws and waterproof adhesive for lasting joints." },
+    ],
   },
   "particle-board": {
     name: "Particle Board", image: particleBoard, tagline: "Cost-Effective, Reliable Performance",
@@ -58,6 +84,18 @@ const productData: Record<string, {
       { property: "Thickness Availability", unit: "mm", value: "8 - 25" },
       { property: "Moisture Content", unit: "%", value: "6 - 10" },
       { property: "Modulus of Elasticity", unit: "N/mm²", value: "≥ 1800" },
+    ],
+    maintenance: [
+      "Keep away from direct water contact",
+      "Use laminate or veneer finish for added protection",
+      "Dust regularly with a dry cloth",
+      "Avoid placing heavy loads on unsupported spans",
+      "Edge-band all exposed edges to prevent moisture ingress",
+    ],
+    installation: [
+      { step: "Plan Layout", desc: "Pre-plan all cuts to minimize wastage. Particle board is best used in standard sizes." },
+      { step: "Cut Carefully", desc: "Use a sharp blade and cut slowly to avoid edge chipping. Support the board on both sides." },
+      { step: "Assemble", desc: "Use cam-lock fittings or dowels with adhesive. Pre-drill for screws to prevent splitting." },
     ],
   },
   "frame-guard-board": {
@@ -74,6 +112,18 @@ const productData: Record<string, {
       { property: "Moisture Content", unit: "%", value: "5 - 8" },
       { property: "Modulus of Elasticity", unit: "N/mm²", value: "≥ 2800" },
     ],
+    maintenance: [
+      "Wipe with a damp cloth for regular cleaning",
+      "Ensure wall base is properly waterproofed before installation",
+      "Avoid drilling unnecessary holes which may weaken the structure",
+      "Apply waterproof sealant at floor contact points",
+      "Inspect annually for any signs of wear at joints",
+    ],
+    installation: [
+      { step: "Prepare Opening", desc: "Ensure the door opening is plumb and square. Remove any debris from the wall surface." },
+      { step: "Cut & Position", desc: "Cut the Frame Guard board to size. Test-fit before final fixing." },
+      { step: "Secure & Seal", desc: "Fix using masonry screws and construction adhesive. Seal all edges with waterproof sealant." },
+    ],
   },
 };
 
@@ -84,9 +134,17 @@ const applications = [
   { name: "Wall Paneling", image: appWall },
 ];
 
+const allProducts = [
+  { name: "MDF Board", slug: "mdf-board", image: mdfBoard },
+  { name: "HDHMR Board", slug: "hdhmr-board", image: hdhmrBoard },
+  { name: "Particle Board", slug: "particle-board", image: particleBoard },
+  { name: "Frame Guard Board", slug: "frame-guard-board", image: frameguardBoard },
+];
+
 const ProductPage = () => {
   const { slug } = useParams<{ slug: string }>();
   const product = slug ? productData[slug] : null;
+  const relatedProducts = allProducts.filter((p) => p.slug !== slug).slice(0, 2);
 
   if (!product) {
     return (
@@ -188,6 +246,67 @@ const ProductPage = () => {
                 ))}
               </tbody>
             </table>
+          </div>
+        </div>
+      </section>
+
+      {/* Maintenance & Care */}
+      <section className="section-padding">
+        <div className="container mx-auto max-w-3xl">
+          <div className="flex items-center gap-3 justify-center mb-8">
+            <ClipboardList size={28} className="text-primary" />
+            <h2 className="text-2xl md:text-3xl font-heading font-bold">Maintenance & Care Tips</h2>
+          </div>
+          <div className="bg-card border border-border rounded-xl p-8">
+            <ul className="space-y-4">
+              {product.maintenance.map((tip, i) => (
+                <li key={i} className="flex items-start gap-3">
+                  <CheckCircle size={18} className="text-primary shrink-0 mt-0.5" />
+                  <span className="text-muted-foreground">{tip}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* Installation Guide */}
+      <section className="section-padding section-alt">
+        <div className="container mx-auto max-w-4xl">
+          <div className="flex items-center gap-3 justify-center mb-10">
+            <Wrench size={28} className="text-primary" />
+            <h2 className="text-2xl md:text-3xl font-heading font-bold">Installation Guide</h2>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {product.installation.map((step, i) => (
+              <div key={i} className="text-center">
+                <div className="w-16 h-16 mx-auto mb-4 bg-primary rounded-full flex items-center justify-center">
+                  <span className="text-primary-foreground font-heading font-bold text-xl">{i + 1}</span>
+                </div>
+                <h3 className="font-heading font-bold text-lg mb-2">{step.step}</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">{step.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Related Products */}
+      <section className="section-padding">
+        <div className="container mx-auto">
+          <h2 className="text-2xl md:text-3xl font-heading font-bold text-center mb-10">Explore More Products</h2>
+          <div className="grid sm:grid-cols-2 gap-8 max-w-2xl mx-auto">
+            {relatedProducts.map((rp) => (
+              <Link key={rp.slug} to={`/products/${rp.slug}`} className="group bg-card rounded-xl overflow-hidden border border-border hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img src={rp.image} alt={rp.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                </div>
+                <div className="p-5 flex items-center justify-between">
+                  <h3 className="font-heading font-semibold text-lg">{rp.name}</h3>
+                  <ArrowRight size={18} className="text-primary group-hover:translate-x-1 transition-transform" />
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
