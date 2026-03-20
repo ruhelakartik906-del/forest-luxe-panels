@@ -329,6 +329,31 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Our Manufacturing Process */}
+      <section className="section-padding section-alt">
+        <div className="container mx-auto">
+          <h2 className="text-3xl md:text-4xl font-heading font-bold text-center mb-4">Our Manufacturing Process</h2>
+          <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-10">Watch how our world-class facility transforms raw materials into premium engineered wood panels</p>
+          <div className="max-w-4xl mx-auto rounded-xl overflow-hidden shadow-2xl border border-border relative group">
+            <div className="aspect-video">
+              <video
+                src="https://videos.pexels.com/video-files/35881632/15217850_2560_1440_60fps.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-foreground/30 flex items-center justify-center group-hover:bg-foreground/40 transition-colors">
+                <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-primary/90 flex items-center justify-center shadow-lg">
+                  <Play size={32} className="text-primary-foreground ml-1" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Latest from Media */}
       <section className="section-padding">
         <div className="container mx-auto">
