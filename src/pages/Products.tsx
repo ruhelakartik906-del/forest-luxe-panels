@@ -17,7 +17,7 @@ const Products = () =>
 <Layout>
     <section className="relative h-48 md:h-64 bg-primary flex items-center">
       <div className="container mx-auto px-4">
-        <h1 className="text-3xl md:text-5xl font-heading font-bold text-primary-foreground text-center">Our Products</h1>
+        <h1 className="text-3xl font-heading font-bold text-primary-foreground text-center md:text-6xl">Our Products</h1>
         <p className="text-primary-foreground/80 mt-2 text-center">Premium engineered wood panels for every application</p>
       </div>
     </section>
