@@ -106,32 +106,39 @@ const Index = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="relative h-[70vh] md:h-[85vh] overflow-hidden">
+      <section className="relative h-[50vh] md:h-[55vh] overflow-hidden">
         {heroSlides.map((slide, i) => (
           <div key={i} className={`absolute inset-0 transition-opacity duration-1000 ${i === currentSlide ? "opacity-100" : "opacity-0"}`}>
-            <img src={slide.image} alt={slide.title} className="w-full h-full object-cover" />
+            <video
+              src={slide.video}
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-full h-full object-cover"
+            />
             <div className="absolute inset-0 bg-foreground/60" />
           </div>
         ))}
-        <div className="relative z-10 h-full flex items-center">
+        <div className="relative z-10 h-full flex items-end pb-12">
           <div className="container mx-auto px-4">
-            <h1 className="text-4xl md:text-6xl font-heading font-bold text-primary-foreground max-w-3xl leading-tight animate-fade-in">
+            <h1 className="text-2xl md:text-4xl font-heading font-bold text-primary-foreground max-w-2xl leading-tight animate-fade-in">
               {heroSlides[currentSlide].title}
             </h1>
-            <p className="text-lg md:text-xl text-primary-foreground/80 mt-4 max-w-xl animate-fade-in">
+            <p className="text-sm md:text-base text-primary-foreground/80 mt-2 max-w-lg animate-fade-in">
               {heroSlides[currentSlide].subtitle}
             </p>
             <Link
               to="/products"
-              className="inline-flex items-center gap-2 mt-8 bg-primary text-primary-foreground px-8 py-3.5 rounded font-semibold hover:bg-accent transition-colors animate-fade-in"
+              className="inline-flex items-center gap-2 mt-5 bg-primary text-primary-foreground px-6 py-2.5 rounded font-semibold text-sm hover:bg-accent transition-colors animate-fade-in"
             >
-              Explore Products <ArrowRight size={18} />
+              Explore Products <ArrowRight size={16} />
             </Link>
           </div>
         </div>
-        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
           {heroSlides.map((_, i) => (
-            <button key={i} onClick={() => setCurrentSlide(i)} className={`w-3 h-3 rounded-full transition-colors ${i === currentSlide ? "bg-primary-foreground" : "bg-primary-foreground/40"}`} />
+            <button key={i} onClick={() => setCurrentSlide(i)} className={`w-2.5 h-2.5 rounded-full transition-colors ${i === currentSlide ? "bg-primary-foreground" : "bg-primary-foreground/40"}`} />
           ))}
         </div>
       </section>
