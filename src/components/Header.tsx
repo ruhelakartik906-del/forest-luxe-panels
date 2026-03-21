@@ -16,8 +16,8 @@ const Header = () => {
   const location = useLocation();
 
   return (
-    <header className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80 border-b border-border">
-      <div className="container mx-auto flex items-center justify-between h-16 px-4 bg-[#e8e8e8]">
+    <header className="sticky top-0 z-50 bg-[#e9e9e9] border-b border-[#d0d0d0]">
+      <div className="container mx-auto flex items-center justify-between h-16 px-4">
         <Link to="/" className="flex items-center gap-2">
           <img src={logo} alt="Infinity - Strong | Reliable | Beautiful" className="h-12 w-auto" />
         </Link>
