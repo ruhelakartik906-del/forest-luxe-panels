@@ -92,13 +92,7 @@ const newsItems = [
 const certLogos = ["ISO 9001:2015", "ISI Certified", "Green Building Council", "FSC Certified", "CARB Compliant", "E1 Standard"];
 
 const Index = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => setCurrentSlide((s) => (s + 1) % heroSlides.length), 5000);
-    return () => clearInterval(timer);
-  }, []);
 
   return (
     <Layout>
