@@ -67,8 +67,8 @@ const Contact = () => {
                     <Factory size={20} className="text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-heading font-semibold">Factory Address</h3>
-                    <p className="text-muted-foreground text-sm">Plot 45-47, RIICO Industrial Area, Bhiwadi, Rajasthan - 301019</p>
+                    <h3 className="font-heading font-semibold">Manufacturing Unit:</h3>
+                    <p className="text-muted-foreground text-sm">Village Pardhana, Tehsil Israna,<br />Panipat, Haryana - 132107</p>
                   </div>
                 </div>
               </div>
