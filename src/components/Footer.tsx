@@ -3,7 +3,7 @@ import { Facebook, Instagram, Linkedin, Youtube, Mail, MapPin, Phone } from "luc
 
 const Footer = () =>
 <footer className="bg-footer-bg text-footer-foreground">
-    <div className="container mx-auto px-4 py-16">
+    <div className="container mx-auto px-4 py-16 bg-secondary-foreground">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
         <div>
           <h3 className="font-heading font-bold text-lg mb-4">Quick Links</h3>
