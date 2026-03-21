@@ -25,7 +25,7 @@ import news3 from "@/assets/news-3.jpg";
 
 const heroSlides = [
 { image: hero1, title: "Premium Wood Panels for Modern Spaces", subtitle: "Engineered for strength, designed for beauty" },
-{ image: hero2, title: "Transform Your Interiors with Quality", subtitle: "Trusted by architects and designers worldwide" }];
+{ image: hero2, title: "Transform Your Interiors\nwith Quality", subtitle: "Trusted by architects and designers worldwide" }];
 
 
 const products = [
@@ -116,7 +116,7 @@ const Index = () => {
         )}
         <div className="relative z-10 h-full flex items-center">
           <div className="container mx-auto px-4">
-            <h1 className="text-4xl font-heading font-bold text-primary-foreground max-w-3xl leading-tight animate-fade-in md:text-3xl">
+            <h1 className="text-4xl font-heading font-bold text-primary-foreground max-w-3xl leading-tight animate-fade-in md:text-3xl whitespace-pre-line">
               {heroSlides[currentSlide].title}
             </h1>
             <p className="text-lg text-primary-foreground/80 mt-4 max-w-xl animate-fade-in md:text-base">
