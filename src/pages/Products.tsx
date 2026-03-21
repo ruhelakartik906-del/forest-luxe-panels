@@ -16,10 +16,14 @@ const products = [
 
 const Products = () =>
 <Layout>
-    <section className="relative h-48 md:h-64 bg-primary flex items-center">
-      <div className="container mx-auto px-4">
-        <h1 className="text-3xl font-heading font-bold text-primary-foreground text-center md:text-6xl">Our Products</h1>
-        <p className="text-primary-foreground/80 mt-2 text-center">Premium engineered wood panels for every application</p>
+    <section className="relative h-48 md:h-64 flex items-center overflow-hidden">
+      <div className="absolute inset-0">
+        <img src={pageHeaderBg} alt="" className="w-full h-full object-cover" style={{ filter: 'blur(1.5px)' }} />
+        <div className="absolute inset-0 bg-black/30" />
+      </div>
+      <div className="container mx-auto px-4 relative z-10">
+        <h1 className="text-3xl font-heading font-bold text-white text-center md:text-6xl">Our Products</h1>
+        <p className="text-white/80 mt-2 text-center">Premium engineered wood panels for every application</p>
       </div>
     </section>
 
