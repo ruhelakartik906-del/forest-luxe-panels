@@ -116,14 +116,14 @@ const Index = () => {
         )}
         <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-20">
           {heroSlides.map((_, i) =>
-          <button key={i} onClick={(e) => { e.preventDefault(); setCurrentSlide(i); }} className={`w-3 h-3 rounded-full transition-colors ${i === currentSlide ? "bg-primary-foreground" : "bg-primary-foreground/40"}`} />
+          <button key={i} onClick={(e) => {e.preventDefault();setCurrentSlide(i);}} className={`w-3 h-3 rounded-full transition-colors ${i === currentSlide ? "bg-primary-foreground" : "bg-primary-foreground/40"}`} />
           )}
         </div>
       </section>
 
       {/* Scrolling Marquee */}
-      <div className="container mx-auto mt-5">
-        <div className="bg-primary py-3 overflow-hidden rounded-[10px]">
+      <div className="container mx-auto">
+        <div className="py-3 overflow-hidden rounded-b-lg bg-secondary-foreground">
           <div className="animate-[marquee_20s_linear_infinite] whitespace-nowrap flex gap-16">
             {[...Array(4)].map((_, i) =>
             <span key={i} className="text-primary-foreground font-heading font-semibold text-sm md:text-base tracking-widest uppercase">
