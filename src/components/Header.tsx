@@ -17,12 +17,12 @@ const Header = () => {
 
   return (
     <header className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80 border-b border-border">
-      <div className="container mx-auto flex items-center justify-between h-16 px-4 bg-[#e8e8e8]">
-        <Link to="/" className="flex items-center gap-2">
+      <div className="container mx-auto relative flex items-center h-16 px-4 bg-[#e8e8e8]">
+        <Link to="/" className="flex items-center gap-2 z-10">
           <img src={logo} alt="Infinity - Strong | Reliable | Beautiful" className="h-12 w-auto" />
         </Link>
 
-        <nav className="hidden md:flex items-center gap-1">
+        <nav className="hidden md:flex items-center gap-2 absolute inset-0 justify-center">
           {navItems.map((item) =>
           <Link
             key={item.path}
@@ -32,17 +32,15 @@ const Header = () => {
             "text-primary bg-primary/10" :
             "text-muted-foreground hover:text-primary hover:bg-primary/5"}`
             }>
-            
               {item.label}
             </Link>
           )}
         </nav>
 
         <button
-          className="md:hidden p-2 text-foreground"
+          className="md:hidden p-2 text-foreground ml-auto"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu">
-          
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
