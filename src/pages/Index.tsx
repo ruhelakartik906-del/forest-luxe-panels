@@ -323,42 +323,15 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Latest from Media */}
-      <section className="section-padding pt-10">
-        <div className="container mx-auto">
-          <div className="flex items-center justify-between mb-10">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold">Latest from Media</h2>
-            <Link to="/media" className="hidden md:inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all">
-              View All <ArrowRight size={16} />
-            </Link>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            {newsItems.map((item, i) =>
-            <div key={i} className="group bg-card rounded-xl overflow-hidden border border-border hover:shadow-xl transition-all duration-300">
-                <div className="aspect-[16/10] overflow-hidden">
-                  <img src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                </div>
-                <div className="p-6">
-                  <p className="text-xs text-muted-foreground mb-2 flex items-center gap-1"><Newspaper size={12} /> {item.date}</p>
-                  <h3 className="font-heading font-semibold mb-2 group-hover:text-primary transition-colors">{item.title}</h3>
-                  <p className="text-muted-foreground text-sm">{item.excerpt}</p>
-                </div>
-              </div>
-            )}
-          </div>
-          <Link to="/media" className="md:hidden inline-flex items-center gap-2 text-primary font-semibold mt-6">
-            View All <ArrowRight size={16} />
-          </Link>
+      {/* Our Partners */}
+      <section className="py-16 bg-background overflow-hidden">
+        <div className="container mx-auto mb-10">
+          <h2 className="text-3xl md:text-4xl font-heading font-bold text-center">Our Partners</h2>
         </div>
-      </section>
-
-      {/* Certifications Slider */}
-      <section className="py-10 bg-section-alt border-y border-border overflow-hidden">
-        <div className="flex animate-[marquee_15s_linear_infinite] gap-16 items-center">
-          {[...certLogos, ...certLogos].map((logo, i) =>
-          <div key={i} className="shrink-0 flex items-center gap-2 px-6 py-3 border border-border rounded-lg bg-card">
-              <Award size={20} className="text-primary" />
-              <span className="font-heading font-semibold text-sm text-muted-foreground whitespace-nowrap">{logo}</span>
+        <div className="flex animate-[marquee_25s_linear_infinite] gap-10 items-center">
+          {[...partnerLogos, ...partnerLogos].map((partner, i) =>
+            <div key={i} className="shrink-0 w-48 h-28 bg-card rounded-xl shadow-md flex items-center justify-center p-4">
+              <img src={partner.image} alt={partner.name} className="max-w-full max-h-full object-contain" />
             </div>
           )}
         </div>
