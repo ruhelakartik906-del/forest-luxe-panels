@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Shield, Leaf, Bug, Hammer, ChevronLeft, ChevronRight, Quote, Factory, Users, Award, MapPin, Check, X, Newspaper } from "lucide-react";
+import { ArrowRight, Shield, Leaf, Bug, Hammer, ChevronLeft, ChevronRight, Quote, Factory, Users, Award, MapPin, Check, X } from "lucide-react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import Layout from "@/components/Layout";
 import heroBanner from "@/assets/hero-banner.png";
@@ -18,9 +18,13 @@ import appOffice2 from "@/assets/app-office-2.jpg";
 import appWall from "@/assets/app-wall.jpg";
 import appBedroom from "@/assets/app-bedroom.jpg";
 import appExterior from "@/assets/app-exterior.jpg";
-import news1 from "@/assets/news-1.jpg";
-import news2 from "@/assets/news-2.jpg";
-import news3 from "@/assets/news-3.jpg";
+import partnerOyo from "@/assets/partner-oyo.webp";
+import partnerDlf from "@/assets/partner-dlf.jpg";
+import partnerEmaar from "@/assets/partner-emaar.jpg";
+import partnerGodrej from "@/assets/partner-godrej.jpg";
+import partnerIndiabulls from "@/assets/partner-indiabulls.jpg";
+import partnerLemontree from "@/assets/partner-lemontree.jpg";
+import partnerTata from "@/assets/partner-tata.jpg";
 
 
 
@@ -83,13 +87,18 @@ const stats = [
 { icon: Award, value: "10M+", label: "Sq. Ft. Produced" }];
 
 
-const newsItems = [
-{ image: news1, title: "WoodCraft Featured in Design Magazine", date: "March 15, 2026", excerpt: "Our premium HDHMR boards were highlighted as the top choice for modern kitchen designs." },
-{ image: news2, title: "Exhibition at IndiaWood 2026", date: "February 28, 2026", excerpt: "WoodCraft showcased its latest innovations at India's largest wood industry trade fair." },
-{ image: news3, title: "Sustainability Milestone Achieved", date: "January 10, 2026", excerpt: "We've planted over 100,000 trees as part of our green initiative commitment." }];
-
-
-const certLogos = ["ISO 9001:2015", "ISI Certified", "Green Building Council", "FSC Certified", "CARB Compliant", "E1 Standard"];
+const partnerLogos = [
+  { name: "OYO", image: partnerOyo },
+  { name: "DLF", image: partnerDlf },
+  { name: "EMAAR", image: partnerEmaar },
+  { name: "Godrej Properties", image: partnerGodrej },
+  { name: "Indiabulls", image: partnerIndiabulls },
+  { name: "Lemon Tree Hotels", image: partnerLemontree },
+  { name: "Tata Housing", image: partnerTata },
+  { name: "OYO", image: partnerOyo },
+  { name: "DLF", image: partnerDlf },
+  { name: "EMAAR", image: partnerEmaar },
+];
 
 const Index = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
@@ -307,44 +316,23 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Latest from Media */}
-      <section className="section-padding pt-10">
-        <div className="container mx-auto">
-          <div className="flex items-center justify-between mb-10">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold">Latest from Media</h2>
-            <Link to="/media" className="hidden md:inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all">
-              View All <ArrowRight size={16} />
-            </Link>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            {newsItems.map((item, i) =>
-            <div key={i} className="group bg-card rounded-xl overflow-hidden border border-border hover:shadow-xl transition-all duration-300">
-                <div className="aspect-[16/10] overflow-hidden">
-                  <img src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                </div>
-                <div className="p-6">
-                  <p className="text-xs text-muted-foreground mb-2 flex items-center gap-1"><Newspaper size={12} /> {item.date}</p>
-                  <h3 className="font-heading font-semibold mb-2 group-hover:text-primary transition-colors">{item.title}</h3>
-                  <p className="text-muted-foreground text-sm">{item.excerpt}</p>
-                </div>
+      {/* Partner Logo Slider */}
+      <section className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] py-14 overflow-hidden mb-[30px]" style={{ backgroundColor: "#dfedde" }}>
+        <h2 className="text-3xl md:text-4xl font-heading font-bold text-center mb-10">Our Clients & Partners</h2>
+        <div className="relative group">
+          <button className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-white/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+            <ChevronLeft size={18} className="text-foreground" />
+          </button>
+          <div className="flex animate-[marquee_25s_linear_infinite] gap-8 px-8">
+            {[...partnerLogos, ...partnerLogos].map((logo, i) =>
+              <div key={i} className="shrink-0 w-48 h-28 bg-white rounded-lg shadow-md flex items-center justify-center p-4">
+                <img src={logo.image} alt={logo.name} className="max-w-full max-h-full object-contain" />
               </div>
             )}
           </div>
-          <Link to="/media" className="md:hidden inline-flex items-center gap-2 text-primary font-semibold mt-6">
-            View All <ArrowRight size={16} />
-          </Link>
-        </div>
-      </section>
-
-      {/* Certifications Slider */}
-      <section className="py-10 bg-section-alt border-y border-border overflow-hidden">
-        <div className="flex animate-[marquee_15s_linear_infinite] gap-16 items-center">
-          {[...certLogos, ...certLogos].map((logo, i) =>
-          <div key={i} className="shrink-0 flex items-center gap-2 px-6 py-3 border border-border rounded-lg bg-card">
-              <Award size={20} className="text-primary" />
-              <span className="font-heading font-semibold text-sm text-muted-foreground whitespace-nowrap">{logo}</span>
-            </div>
-          )}
+          <button className="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-white/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+            <ChevronRight size={18} className="text-foreground" />
+          </button>
         </div>
       </section>
     </Layout>);
