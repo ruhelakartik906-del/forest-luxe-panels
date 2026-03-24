@@ -317,7 +317,7 @@ const Index = () => {
       </section>
 
       {/* Partner Logo Slider */}
-      <section className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] py-14 overflow-hidden mb-[30px]" style={{ backgroundColor: "#dfedde" }}>
+      <section className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] py-14 overflow-hidden mb-0" style={{ backgroundColor: "#dfedde" }}>
         <h2 className="text-3xl md:text-4xl font-heading font-bold text-center mb-10">Our Clients & Partners</h2>
         <div className="relative group">
           <button className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-white/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
