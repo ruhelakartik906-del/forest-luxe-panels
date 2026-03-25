@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Facebook, Instagram, Linkedin, Youtube, Mail, MapPin, Phone } from "lucide-react";
+import infinityLogo from "@/assets/infinity-logo.jpeg";
 
 const Footer = () =>
   <footer className="bg-white border-t border-border">
@@ -7,9 +8,7 @@ const Footer = () =>
       <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-10">
         {/* Logo placeholder */}
         <div className="flex items-start">
-          <div className="w-40 h-24 bg-muted rounded flex items-center justify-center text-muted-foreground text-xs">
-            Logo
-          </div>
+          <img src={infinityLogo} alt="Infinity Boards Logo" className="w-40 h-auto object-contain" />
         </div>
 
         {/* Columns */}
