@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import Layout from "@/components/Layout";
+import DownloadCatalog from "@/components/DownloadCatalog";
 import pageHeaderBg from "@/assets/page-header-bg.jpg";
 import mdfBoard from "@/assets/mdf-board.jpg";
 import hdhmrBoard from "@/assets/hdhmr-board.jpg";
@@ -51,6 +52,10 @@ const Products = () =>
         </div>
       </div>
     </section>
+
+    <div style={{ marginTop: '80px', marginBottom: '40px' }}>
+      <DownloadCatalog />
+    </div>
   </Layout>;
 
 
