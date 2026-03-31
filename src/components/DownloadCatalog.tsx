@@ -48,7 +48,7 @@ const DownloadCatalog = () => {
               Download Catalog
             </h2>
             <p className="text-muted-foreground text-center mb-8 text-sm">
-              Get our complete company profile and product catalog
+              Get our complete Infinity Board and Infinity  catalogue
             </p>
             <div className="grid sm:grid-cols-2 gap-6 max-w-lg mx-auto">
               {/* Company Profile */}
@@ -73,7 +73,7 @@ const DownloadCatalog = () => {
                 <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary transition-colors">
                   <FileText size={26} className="text-primary group-hover:text-primary-foreground transition-colors" />
                 </div>
-                <span className="font-heading font-semibold text-sm">Infinity Catelogue</span>
+                <span className="font-heading font-semibold text-sm">Infinity Catalogue</span>
                 <span className="inline-flex items-center gap-1 text-xs text-primary font-medium">
                   <Download size={14} /> Download
                 </span>
