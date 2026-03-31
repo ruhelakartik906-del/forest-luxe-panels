@@ -45,7 +45,7 @@ const features = [
 
 const testimonials = [
 { name: "Rajesh Kumar", role: "Interior Designer", quote: "WoodCraft boards have become our go-to for premium projects. The consistency and quality are unmatched." },
-{ name: "Priya Sharma", role: "Architect", quote: "The HDHMR boards offer incredible moisture resistance. Perfect for kitchen and bathroom cabinetry." },
+{ name: "Priya Sharma", role: "Architect", quote: "The HDSMR boards offer incredible moisture resistance. Perfect for kitchen and bathroom cabinetry." },
 { name: "Amit Patel", role: "Furniture Manufacturer", quote: "We've been sourcing from WoodCraft for 5 years. Reliable quality, timely delivery every time." }];
 
 
