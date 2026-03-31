@@ -13,8 +13,8 @@ import {
 import { toast } from "sonner";
 
 const DOWNLOADS = {
-  profile: "https://drive.google.com/file/d/17g8QmRpCMVmYtxey0pCNUgwGKR27nV6g/view?usp=sharing",
-  catalog: "https://drive.google.com/file/d/14Gp0ARje-aLd-N11VhNPKJUy_whj3W9H/view?usp=sharing",
+  particleBoard: "https://drive.google.com/file/d/17g8QmRpCMVmYtxey0pCNUgwGKR27nV6g/view?usp=sharing",
+  mdfHdhmr: "https://drive.google.com/file/d/14Gp0ARje-aLd-N11VhNPKJUy_whj3W9H/view?usp=sharing",
 };
 
 const DownloadCatalog = () => {
@@ -28,8 +28,8 @@ const DownloadCatalog = () => {
 
     setSubmitting(true);
 
-    window.open(DOWNLOADS.profile, "_blank");
-    window.open(DOWNLOADS.catalog, "_blank");
+    window.open(DOWNLOADS.particleBoard, "_blank");
+    window.open(DOWNLOADS.mdfHdhmr, "_blank");
 
     setTimeout(() => {
       setOpen(false);
@@ -47,8 +47,8 @@ const DownloadCatalog = () => {
             <h2 className="text-2xl md:text-3xl font-heading font-bold text-center mb-2 text-foreground">
               Download Catalog
             </h2>
-            <p className="text-muted-foreground text-center mb-8 text-sm">
-              Get our complete Infinity Board and Infinity  catalogue
+             <p className="text-muted-foreground text-center mb-8 text-sm">
+               Download our complete product catalogues
             </p>
             <div className="grid sm:grid-cols-2 gap-6 max-w-lg mx-auto">
               {/* Company Profile */}
@@ -59,7 +59,7 @@ const DownloadCatalog = () => {
                 <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary transition-colors">
                   <FileText size={26} className="text-primary group-hover:text-primary-foreground transition-colors" />
                 </div>
-                <span className="font-heading font-semibold text-sm">Infinity Board</span>
+                <span className="font-heading font-semibold text-sm">Particle Board Catalogue</span>
                 <span className="inline-flex items-center gap-1 text-xs text-primary font-medium">
                   <Download size={14} /> Download
                 </span>
@@ -73,7 +73,7 @@ const DownloadCatalog = () => {
                 <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary transition-colors">
                   <FileText size={26} className="text-primary group-hover:text-primary-foreground transition-colors" />
                 </div>
-                <span className="font-heading font-semibold text-sm">Infinity Catalogue</span>
+                <span className="font-heading font-semibold text-sm">MDF & HDHMR Catalogue</span>
                 <span className="inline-flex items-center gap-1 text-xs text-primary font-medium">
                   <Download size={14} /> Download
                 </span>
