@@ -375,8 +375,8 @@ const Index = () => {
           <div className="grid md:grid-cols-3 gap-8">
             {["/videos/video-1.mp4", "/videos/video-2.mp4", "/videos/video-3.mp4"].map((src, i) =>
             <div key={i} className="overflow-hidden rounded-xl border border-border shadow-lg transition-all duration-300 hover:shadow-xl">
-                <div className="aspect-video w-full bg-black">
-                  <video src={src} controls className="block h-full w-full object-contain" preload="metadata" />
+                <div className="aspect-[4/3] w-full">
+                  <video src={src} controls className="block h-full w-full object-cover" preload="metadata" />
                 </div>
               </div>
             )}
