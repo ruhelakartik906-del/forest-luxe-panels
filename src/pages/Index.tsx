@@ -238,53 +238,6 @@ const Index = () => {
 
 
 
-            <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-10">Explore our brand journey, manufacturing process, and product innovations</p>
-
-            {/* Main Player */}
-            <div className="max-w-4xl mx-auto mb-8">
-              <div className="aspect-video rounded-lg overflow-hidden shadow-xl border border-border">
-                <iframe
-                  key={activeVideoId}
-                  src={`https://www.youtube.com/embed/${activeVideoId}?autoplay=0&rel=0`}
-                  title="Corporate Video"
-                  className="w-full h-full"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
-              </div>
-            </div>
-
-            {/* Thumbnail Grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 max-w-4xl mx-auto">
-              {corporateVideos.map((video, i) => (
-                <button
-                  key={i}
-                  onClick={() => setActiveVideoId(video.id)}
-                  className={`group relative rounded-md overflow-hidden shadow-md border-2 transition-all duration-300 ${
-                    activeVideoId === video.id && i === corporateVideos.findIndex(v => v.id === activeVideoId)
-                      ? "border-primary ring-2 ring-primary/30"
-                      : "border-transparent hover:border-primary/50"
-                  }`}
-                >
-                  <div className="aspect-video">
-                    <img
-                      src={`https://img.youtube.com/vi/${video.id}/mqdefault.jpg`}
-                      alt={video.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                    <div className="absolute inset-0 bg-foreground/30 group-hover:bg-foreground/10 transition-colors flex items-center justify-center">
-                      <div className="w-8 h-8 rounded-full bg-primary/90 flex items-center justify-center">
-                        <Play size={14} className="text-primary-foreground ml-0.5" fill="currentColor" />
-                      </div>
-                    </div>
-                  </div>
-                </button>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Comparison Table */}
       <section className="section-padding">
         <div className="container mx-auto max-w-4xl">
