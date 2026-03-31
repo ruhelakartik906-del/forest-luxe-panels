@@ -10,7 +10,7 @@ import frameguardBoard from "@/assets/frameguard-board.jpg";
 
 const products = [
 { name: "MDF Board", image: mdfBoard, slug: "mdf-board", desc: "Medium Density Fibreboard for smooth finishes and versatile applications" },
-{ name: "HDHMR Board", image: hdhmrBoard, slug: "hdhmr-board", desc: "High Density High Moisture Resistant boards for demanding environments" },
+{ name: "HDSMR Board", image: hdhmrBoard, slug: "hdhmr-board", desc: "High Density High Moisture Resistant boards for demanding environments" },
 { name: "Particle Board", image: particleBoard, slug: "particle-board", desc: "Cost-effective engineered wood for furniture and interiors" },
 { name: "Flame Guard Board", image: frameguardBoard, slug: "flame-guard-board", desc: "Fire-retardant MDF engineered for maximum safety in public spaces" }];
 
