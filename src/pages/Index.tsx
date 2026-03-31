@@ -188,6 +188,9 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Download Catalog */}
+      <DownloadCatalog />
+
       {/* Applications Gallery */}
       <section className="section-padding">
         <div className="container mx-auto">
@@ -218,9 +221,6 @@ const Index = () => {
           </Tabs>
         </div>
       </section>
-
-      {/* Download Catalog */}
-      <DownloadCatalog />
 
       {/* Why Choose Us */}
       <section className="section-padding section-alt">
