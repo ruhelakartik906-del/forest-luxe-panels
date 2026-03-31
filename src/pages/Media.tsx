@@ -88,14 +88,19 @@ const Media = () => {
 
       {/* Video Gallery */}
       <section className="py-16 px-4">
-        <div className="container mx-auto">
+        <div className="max-w-6xl mx-auto px-4">
           <h2 className="font-heading font-bold text-center mb-10 text-3xl">Video Gallery</h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {["/videos/media-video-1.mp4", "/videos/media-video-2.mp4", "/videos/video-3.mp4"].map((src, i) => (
-              <div key={i} className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
-                <div className="aspect-video">
-                  <video src={src} controls className="w-full h-full object-cover" preload="metadata" />
-                </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-x-4 gap-y-6 justify-items-center">
+            {[
+              "/videos/media-video-1.mp4",
+              "/videos/media-video-2.mp4",
+              "/videos/video-3.mp4",
+              "/videos/video-1.mp4",
+              "/videos/video-2.mp4",
+              "/videos/video-3.mp4",
+            ].map((src, i) => (
+              <div key={i} className="overflow-hidden rounded-2xl border border-border shadow-lg transition-all duration-300 hover:shadow-xl w-full max-w-[300px] aspect-[9/16]">
+                <video src={src} controls className="block h-full w-full object-cover" preload="metadata" />
               </div>
             ))}
           </div>
