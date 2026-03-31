@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Shield, Leaf, Bug, Hammer, ChevronLeft, ChevronRight, Quote, Factory, Users, Award, MapPin, Check, X, Play } from "lucide-react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import Layout from "@/components/Layout";
+import DownloadCatalog from "@/components/DownloadCatalog";
 import heroBanner from "@/assets/hero-banner.png";
 import factory from "@/assets/factory.jpg";
 import factoryWide from "@/assets/factory-wide.jpg";
@@ -217,6 +218,9 @@ const Index = () => {
           </Tabs>
         </div>
       </section>
+
+      {/* Download Catalog */}
+      <DownloadCatalog />
 
       {/* Why Choose Us */}
       <section className="section-padding section-alt">
