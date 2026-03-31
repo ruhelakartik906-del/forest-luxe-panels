@@ -223,30 +223,32 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Exclusive Partner Offer */}
-      <section className="relative py-16 md:py-20 overflow-hidden">
+      {/* Exclusive Supply Partner Offer */}
+      <section className="relative py-20 md:py-24 overflow-hidden">
         <div className="absolute inset-0">
           <img src={woodGrainBg} alt="" className="w-full h-full object-cover" loading="lazy" width={1024} height={768} />
           <div className="absolute inset-0 bg-background/60" />
         </div>
         <div className="relative z-10 container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="pl-2 md:pl-6">
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">Exclusive Partner Offer</h2>
+          <div className="flex flex-col md:flex-row gap-12 items-center">
+            <div className="w-full md:w-[40%] pl-2 md:pl-6">
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">Exclusive Supply Partner Offer</h2>
               <p className="text-muted-foreground leading-relaxed">
-                Explore this special video overview from our premium supply partner showcasing our shared commitment to quality and innovation. Discover exclusive insights and upcoming collaboration details.
+                Explore a special overview from our premium supply partner showcasing our shared commitment to quality and innovation. Discover exclusive insights.
               </p>
             </div>
-            <div className="aspect-video rounded-2xl overflow-hidden shadow-md">
-              <video
-                src="/videos/partner-offer.mp4"
-                className="w-full h-full object-cover"
-                autoPlay
-                loop
-                muted
-                playsInline
-                controls
-              />
+            <div className="w-full md:w-[60%]">
+              <div className="aspect-[9/16] rounded-2xl overflow-hidden shadow-md">
+                <video
+                  src="/videos/partner-offer.mp4"
+                  className="w-full h-full object-cover"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  controls
+                />
+              </div>
             </div>
           </div>
         </div>
