@@ -219,6 +219,9 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Download Catalog */}
+      <DownloadCatalog />
+
       {/* Why Choose Us */}
       <section className="section-padding section-alt">
         <div className="container mx-auto">
