@@ -31,7 +31,7 @@ import partnerTata from "@/assets/partner-tata.jpg";
 
 const products = [
 { name: "MDF Board", image: mdfBoard, slug: "mdf-board", desc: "Medium Density Fibreboard for smooth finishes and versatile applications", features: ["Smooth surface finish", "Easy to paint & laminate", "Eco-friendly manufacturing"] },
-{ name: "HDHMR Board", image: hdhmrBoard, slug: "hdhmr-board", desc: "High Density High Moisture Resistant boards for demanding environments", features: ["Superior moisture resistance", "Ultra-high density core", "Kitchen & bathroom ready"] },
+{ name: "HDSMR Board", image: hdhmrBoard, slug: "hdhmr-board", desc: "High Density High Moisture Resistant boards for demanding environments", features: ["Superior moisture resistance", "Ultra-high density core", "Kitchen & bathroom ready"] },
 { name: "Particle Board", image: particleBoard, slug: "particle-board", desc: "Cost-effective solution for furniture and interior fit-outs", features: ["Uniform structure", "Budget-friendly option", "Laminate-ready surface"] },
 { name: "Flame Guard Board", image: frameguardBoard, slug: "flame-guard-board", desc: "Fire-retardant MDF engineered for maximum safety in public spaces", features: ["Low smoke emission", "High fire resistance", "Easily processable"] }];
 
