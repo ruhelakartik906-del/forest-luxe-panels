@@ -230,12 +230,12 @@ const Index = () => {
           <div className="absolute inset-0 bg-background/60" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4">
-          <div className="flex flex-col md:flex-row gap-8 items-center">
-            <div className="w-full md:w-[55%] md:min-h-[550px] flex flex-col justify-center pl-2 md:pl-6">
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground mb-6 leading-tight">
+          <div className="flex flex-col md:flex-row gap-8 items-start">
+            <div className="w-full md:w-[55%] pl-2 md:pl-6 pt-0">
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-6 leading-tight">
                 Exclusive Partner Opportunity: Unlock Shared Value
               </h2>
-              <ul className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8 space-y-3 list-disc list-inside">
+              <ul className="text-2xl md:text-3xl text-muted-foreground leading-relaxed mb-8 space-y-3 list-disc list-inside">
                 <li>Gain Priority Access to New HDSMR &amp; MDF Board Collections.</li>
                 <li>Sneak Peek at Emerging International Furniture &amp; Panel Trends.</li>
                 <li>Co-marketing Opportunities to Reach New Builder Networks.</li>
