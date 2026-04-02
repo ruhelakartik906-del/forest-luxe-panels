@@ -361,11 +361,12 @@ const Index = () => {
               <div className="aspect-video rounded-lg overflow-hidden shadow-xl border border-border">
                 <iframe
                   key={activeVideoId}
-                  src={`https://www.youtube.com/embed/${activeVideoId}?autoplay=0&rel=0`}
+                  src={`https://www.youtube.com/embed/${activeVideoId}?rel=0&modestbranding=1`}
                   title="Corporate Video"
                   className="w-full h-full"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen
+                  referrerPolicy="no-referrer-when-downgrade"
                 />
               </div>
             </div>
