@@ -45,9 +45,13 @@ const features = [
 
 
 const testimonials = [
-{ name: "Rajesh Kumar", role: "Interior Designer", quote: "WoodCraft boards have become our go-to for premium projects. The consistency and quality are unmatched." },
-{ name: "Priya Sharma", role: "Architect", quote: "The HDSMR boards offer incredible moisture resistance. Perfect for kitchen and bathroom cabinetry." },
-{ name: "Amit Patel", role: "Furniture Manufacturer", quote: "We've been sourcing from WoodCraft for 5 years. Reliable quality, timely delivery every time." }];
+  { name: "Rajesh Kumar", quote: "I was very impressed with the quality of Infinity Boards. The finish, durability, and consistency are top-notch. Our clients love the results every single time." },
+  { name: "Priya Sharma", quote: "The HDSMR boards offer incredible moisture resistance. Perfect for kitchen and bathroom cabinetry. Highly recommend for premium interior projects." },
+  { name: "Amit Patel", quote: "We've been sourcing from Infinity for 5 years now. Reliable quality, timely delivery, and outstanding customer support every time." },
+  { name: "Sneha Reddy", quote: "The product range is fantastic. From MDF to particle boards, everything meets international standards. A truly dependable manufacturing partner." },
+  { name: "Vikram Singh", quote: "Exceptional boards with great screw-holding capacity. Our furniture production quality has improved significantly since switching to Infinity." },
+  { name: "Neha Gupta", quote: "Outstanding surface quality and dimensional accuracy. These boards make our lamination process seamless and the end result is always premium." },
+];
 
 
 const applicationTabs: Record<string, {name: string;image: string;}[]> = {
