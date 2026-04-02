@@ -118,6 +118,16 @@ const corporateVideos = [
 const Index = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [activeVideoId, setActiveVideoId] = useState(corporateVideos[0].id);
+  const [thumbStart, setThumbStart] = useState(0);
+  const visibleThumbs = 4;
+  const maxThumbStart = Math.max(0, corporateVideos.length - visibleThumbs);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setThumbStart((prev) => (prev >= maxThumbStart ? 0 : prev + 1));
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [maxThumbStart]);
 
   return (
     <Layout>
@@ -360,32 +370,52 @@ const Index = () => {
               </div>
             </div>
 
-            {/* Thumbnail Grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 max-w-4xl mx-auto">
-              {corporateVideos.map((video, i) => (
-                <button
-                  key={i}
-                  onClick={() => setActiveVideoId(video.id)}
-                  className={`group relative rounded-md overflow-hidden shadow-md border-2 transition-all duration-300 ${
-                    activeVideoId === video.id && i === corporateVideos.findIndex(v => v.id === activeVideoId)
-                      ? "border-primary ring-2 ring-primary/30"
-                      : "border-transparent hover:border-primary/50"
-                  }`}
+            {/* Thumbnail Slider */}
+            <div className="relative max-w-4xl mx-auto">
+              <button
+                onClick={() => setThumbStart((prev) => Math.max(0, prev - 1))}
+                className="absolute -left-4 md:-left-10 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-white shadow-md flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
+              >
+                <ChevronLeft size={16} />
+              </button>
+              <button
+                onClick={() => setThumbStart((prev) => Math.min(maxThumbStart, prev + 1))}
+                className="absolute -right-4 md:-right-10 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-white shadow-md flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
+              >
+                <ChevronRight size={16} />
+              </button>
+              <div className="overflow-hidden">
+                <div
+                  className="flex gap-4 transition-transform duration-500 ease-in-out"
+                  style={{ transform: `translateX(-${thumbStart * (100 / visibleThumbs)}%)` }}
                 >
-                  <div className="aspect-video">
-                    <img
-                      src={`https://img.youtube.com/vi/${video.id}/mqdefault.jpg`}
-                      alt={video.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                    <div className="absolute inset-0 bg-foreground/30 group-hover:bg-foreground/10 transition-colors flex items-center justify-center">
-                      <div className="w-8 h-8 rounded-full bg-primary/90 flex items-center justify-center">
-                        <Play size={14} className="text-primary-foreground ml-0.5" fill="currentColor" />
+                  {corporateVideos.map((video, i) => (
+                    <button
+                      key={i}
+                      onClick={() => setActiveVideoId(video.id)}
+                      className={`group relative rounded-md overflow-hidden shadow-md border-2 transition-all duration-300 flex-shrink-0 ${
+                        activeVideoId === video.id
+                          ? "border-primary ring-2 ring-primary/30"
+                          : "border-transparent hover:border-primary/50"
+                      }`}
+                      style={{ width: `calc((100% - ${(visibleThumbs - 1) * 16}px) / ${visibleThumbs})` }}
+                    >
+                      <div className="aspect-video">
+                        <img
+                          src={`https://img.youtube.com/vi/${video.id}/mqdefault.jpg`}
+                          alt={video.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
+                        <div className="absolute inset-0 bg-foreground/30 group-hover:bg-foreground/10 transition-colors flex items-center justify-center">
+                          <div className="w-8 h-8 rounded-full bg-primary/90 flex items-center justify-center">
+                            <Play size={14} className="text-primary-foreground ml-0.5" fill="currentColor" />
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                  </div>
-                </button>
-              ))}
+                    </button>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
