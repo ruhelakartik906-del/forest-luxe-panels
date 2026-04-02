@@ -36,7 +36,7 @@ const About = () =>
     <section className="section-padding">
       <div className="container mx-auto">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <img src={factory} alt="Our facility" className="rounded-lg shadow-lg h-80 w-full object-cover" />
+          <img src={visionFactory} alt="Our manufacturing facility" className="rounded-2xl shadow-lg h-80 w-full object-cover" loading="lazy" width={1280} height={768} />
           <div>
             <div className="mb-8">
               <div className="flex items-center gap-3 mb-3">
