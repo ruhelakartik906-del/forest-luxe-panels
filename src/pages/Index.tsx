@@ -109,7 +109,7 @@ const partnerLogos = [
 const corporateVideos = [
   { id: "eIkQxRty31M", title: "Corporate Video 1" },
   { id: "BOqIpNlPwBg", title: "Corporate Video 2" },
-  { id: "si05K7XhoV4", title: "Corporate Video 3" },
+  { id: "PA4SR3zBhNd5TWAo", title: "Corporate Video 3" },
   { id: "v4xPPnzYFNw", title: "Corporate Video 4" },
   { id: "kW-cxcoCqP4", title: "Corporate Video 5" },
   { id: "kW-cxcoCqP4", title: "Corporate Video 6" },
@@ -361,11 +361,12 @@ const Index = () => {
               <div className="aspect-video rounded-lg overflow-hidden shadow-xl border border-border">
                 <iframe
                   key={activeVideoId}
-                  src={`https://www.youtube.com/embed/${activeVideoId}?autoplay=0&rel=0`}
+                  src={`https://www.youtube.com/embed/${activeVideoId}?rel=0&modestbranding=1`}
                   title="Corporate Video"
                   className="w-full h-full"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen
+                  referrerPolicy="no-referrer-when-downgrade"
                 />
               </div>
             </div>
