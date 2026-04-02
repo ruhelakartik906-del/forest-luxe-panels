@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import VideoShowcase from "@/components/VideoShowcase";
 import { Link } from "react-router-dom";
 import { ArrowRight, Shield, Leaf, Bug, Hammer, ChevronLeft, ChevronRight, Quote, Factory, Users, Award, MapPin, Check, X, Play, Star } from "lucide-react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
@@ -482,31 +483,7 @@ const Index = () => {
       </section>
 
       {/* Video Showcase */}
-      <section className="section-padding pb-10">
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-heading font-bold mb-10">Infinity Goods Video</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-x-4 gap-y-6 justify-items-center">
-            {["/videos/video-1.mp4", null, "/videos/video-3.mp4"].map((src, i) =>
-              <div key={i} className="relative overflow-hidden rounded-2xl border border-border shadow-lg transition-all duration-300 hover:shadow-xl w-full max-w-[300px] aspect-[9/16]">
-                {src ? (
-                  <video src={src} controls className="block h-full w-full object-cover" preload="metadata" />
-                ) : (
-                  <div className="relative w-full h-full overflow-hidden">
-                    <iframe
-                      src="https://www.youtube.com/embed/v4xPPnzYFNw?controls=1&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&cc_load_policy=0&loop=1&playlist=v4xPPnzYFNw"
-                      allow="encrypted-media"
-                      allowFullScreen
-                      className="absolute border-0"
-                      style={{ top: '-60px', left: 0, width: '100%', height: 'calc(100% + 120px)' }}
-                      title="Infinity Goods Video"
-                    />
-                  </div>
-                )}
-              </div>
-            )}
-          </div>
-        </div>
-      </section>
+      <VideoShowcase />
 
       {/* Get in Touch */}
       <section className="bg-white py-16 pb-5">
