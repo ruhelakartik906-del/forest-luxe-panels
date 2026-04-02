@@ -491,13 +491,16 @@ const Index = () => {
                 {src ? (
                   <video src={src} controls className="block h-full w-full object-cover" preload="metadata" />
                 ) : (
-                  <iframe
-                    src="https://www.youtube.com/embed/v4xPPnzYFNw?controls=1&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&loop=1&playlist=v4xPPnzYFNw"
-                    allow="encrypted-media"
-                    allowFullScreen
-                    className="block h-full w-full object-cover border-0"
-                    title="Infinity Goods Video"
-                  />
+                  <div className="relative w-full h-full overflow-hidden">
+                    <iframe
+                      src="https://www.youtube.com/embed/v4xPPnzYFNw?controls=1&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&cc_load_policy=0&loop=1&playlist=v4xPPnzYFNw"
+                      allow="encrypted-media"
+                      allowFullScreen
+                      className="absolute border-0"
+                      style={{ top: '-60px', left: 0, width: '100%', height: 'calc(100% + 120px)' }}
+                      title="Infinity Goods Video"
+                    />
+                  </div>
                 )}
               </div>
             )}
