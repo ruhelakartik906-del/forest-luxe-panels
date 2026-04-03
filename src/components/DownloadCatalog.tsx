@@ -28,8 +28,17 @@ const DownloadCatalog = () => {
 
     setSubmitting(true);
 
-    window.open(DOWNLOADS.particleBoard, "_blank");
-    window.open(DOWNLOADS.mdfHdhmr, "_blank");
+    const downloadFile = (url: string, filename: string) => {
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    };
+
+    downloadFile(DOWNLOADS.particleBoard, "Particle_Board_Catalog.pdf");
+    setTimeout(() => downloadFile(DOWNLOADS.mdfHdhmr, "MDF_Catalog.pdf"), 500);
 
     setTimeout(() => {
       setOpen(false);
